@@ -1,0 +1,2 @@
+[tool.pyright]
+ignore = ["MiniCLexer.py", "MiniCParser.py", "MiniCVisitor.py"]

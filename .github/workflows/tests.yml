@@ -1,0 +1,17 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    # Image with the RISC-V toolchain, the Spike simulator, ANTLR and pyright
+    container: mmoy/riscv-latex-python:dev
+    steps:
+      - uses: actions/checkout@v4
+      - name: Type check
+        run: make typecheck
+      - name: Run tests
+        run: make test
